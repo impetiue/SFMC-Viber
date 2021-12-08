@@ -30,7 +30,7 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "9083ef35-6454-4360-b406-9ef7360053c8",
+      "applicationExtensionKey": "bbbdb771-f6f8-4b5e-bef4-374d0450a5e6",
        "save": {
            "url": "https://viber-botsot.herokuapp.com/journeybuilder/save",
             "verb": "POST",
