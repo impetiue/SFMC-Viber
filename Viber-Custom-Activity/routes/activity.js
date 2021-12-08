@@ -136,7 +136,7 @@ exports.execute = function (req, res) {
               },
               "content": {
                 "type": "text",
-                "payload": "Message From SFMC!"
+                "payload": body
               }
             })
           
