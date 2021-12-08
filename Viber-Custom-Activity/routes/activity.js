@@ -127,7 +127,20 @@ exports.execute = function (req, res) {
               'Content-Type': 'application/json',
               'Authorization': 'Bearer ' + authToken
             },
-            body: '{\r\n  "channel": {\r\n    "id": "+ChannelId+"\r\n  },\r\n  "contact": {\r\n    "id": "6873520748825954928"\r\n  },\r\n  "content": {\r\n        "type": "text",\r\n        "payload": "From SFMC!"\r\n      }\r\n  }\r\n}'
+           body: JSON.stringify({
+              "channel": {
+                "id": ChannelId
+              },
+              "contact": {
+                "id": "6873520748825954928"
+              },
+              "content": {
+                "type": "image",
+                "payload": {
+                  "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSAtSk0xnoHLlBOS_ATH4Nc8uN2jeP2ld8fg&usqp=CAU"
+                }
+              }
+            })
           
           };
 
