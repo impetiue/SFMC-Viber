@@ -85,13 +85,12 @@ define([
 
     function save() {
 
-        var accountSid = $('#accountSID').val();
+        var ChannelId = $('#ChannelId').val();
         var authToken = $('#authToken').val();
-        var messagingService = $('#messagingService').val();
         var body = $('#messageBody').val();
 
         payload['arguments'].execute.inArguments = [{
-            "accountSid": accountSid,
+            "ChannelId": ChannelId,
             "authToken": authToken,
             "messagingService": messagingService,
             "body": body,
