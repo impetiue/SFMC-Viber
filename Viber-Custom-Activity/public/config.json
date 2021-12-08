@@ -21,7 +21,7 @@
                 }               
             ],
             "outArguments": [],
-            "url": "https://sfmc-project.herokuapp.com/journeybuilder/execute",
+            "url": "https://viber-botsot.herokuapp.com/journeybuilder/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -32,7 +32,7 @@
     "configurationArguments": {
       "applicationExtensionKey": "9083ef35-6454-4360-b406-9ef7360053c8",
        "save": {
-           "url": "https://sfmc-project.herokuapp.com/journeybuilder/save",
+           "url": "https://viber-botsot.herokuapp.com/journeybuilder/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -40,7 +40,7 @@
             "timeout": 2000
        },
        "publish": {
-           "url": "https://sfmc-project.herokuapp.com/journeybuilder/publish",
+           "url": "https://viber-botsot.herokuapp.com/journeybuilder/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -48,7 +48,7 @@
             "timeout": 2000
        },
        "validate": {
-           "url": "https://sfmc-project.herokuapp.com/journeybuilder/validate",
+           "url": "https://viber-botsot.herokuapp.com/journeybuilder/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -56,7 +56,7 @@
             "timeout": 2000
        },
        "stop": {
-           "url": "https://sfmc-project.herokuapp.com/journeybuilder/stop",
+           "url": "https://viber-botsot.herokuapp.com/journeybuilder/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
