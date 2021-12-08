@@ -97,7 +97,7 @@ exports.execute = function (req, res) {
     
     var requestBody = req.body.inArguments[0];
 
-    const ChannelId = requestBody.ChannelId;
+    const Channel_Id = requestBody.ChannelId;
      console.log("ChannelId=>>>>>>>> " + ChannelId);
     const authToken = requestBody.authToken;
      console.log("authToken=>>>>>>>>> " + authToken);
@@ -125,7 +125,7 @@ exports.execute = function (req, res) {
             'url': 'https://api.amio.io/v1/messages',
             'headers': {
               'Content-Type': 'application/json',
-              'Authorization': 'Bearer b89lWiLK72V66U1TglmWncd322nJQE9nn6S7VJRQrChHPiBBhuwFs52w13ROI2hOfnCNZLGIoF0RzVb3cGBSPu40Ks'
+              'Authorization': 'Bearer ' + authToken
             },
             body: '{\r\n  "channel": {\r\n    "id": "6873519355419446865"\r\n  },\r\n  "contact": {\r\n    "id": "6873520748825954928"\r\n  },\r\n  "content": {\r\n        "type": "text",\r\n        "payload": "From SFMC!"\r\n      }\r\n  }\r\n}'
           
