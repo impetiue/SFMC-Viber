@@ -135,10 +135,8 @@ exports.execute = function (req, res) {
                 "id": "6873520748825954928"
               },
               "content": {
-                "type": "image",
-                "payload": {
-                  "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSAtSk0xnoHLlBOS_ATH4Nc8uN2jeP2ld8fg&usqp=CAU"
-                }
+                "type": "text",
+                "payload": "Message From SFMC!"
               }
             })
           
