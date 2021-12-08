@@ -7,8 +7,8 @@
     "type": "REST",
     "lang": {
        "en-US": {
-           "name": "Twilio SMS",
-           "description": "Send Twilio SMS with Journey Builder",
+           "name": "Viber SMS",
+           "description": "Send Amio-Viber SMS with Journey Builder",
            "TwilioMessage":"test"
        }
     },
