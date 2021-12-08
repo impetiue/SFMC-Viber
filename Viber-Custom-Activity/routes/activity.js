@@ -98,7 +98,7 @@ exports.execute = function (req, res) {
     var requestBody = req.body.inArguments[0];
 
     const Channel_Id = requestBody.ChannelId;
-     console.log("ChannelId=>>>>>>>> " + ChannelId);
+     console.log("ChannelId=>>>>>>>> " + Channel_Id);
     const authToken = requestBody.authToken;
      console.log("authToken=>>>>>>>>> " + authToken);
     const to = requestBody.to;
