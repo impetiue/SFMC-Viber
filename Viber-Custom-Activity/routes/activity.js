@@ -127,7 +127,7 @@ exports.execute = function (req, res) {
               'Content-Type': 'application/json',
               'Authorization': 'Bearer ' + authToken
             },
-            body: '{\r\n  "channel": {\r\n    "id": "6873519355419446865"\r\n  },\r\n  "contact": {\r\n    "id": "6873520748825954928"\r\n  },\r\n  "content": {\r\n        "type": "text",\r\n        "payload": "From SFMC!"\r\n      }\r\n  }\r\n}'
+            body: '{\r\n  "channel": {\r\n    "id": '+Channel_Id+'\r\n  },\r\n  "contact": {\r\n    "id": "6873520748825954928"\r\n  },\r\n  "content": {\r\n        "type": "text",\r\n        "payload": "From SFMC!"\r\n      }\r\n  }\r\n}'
           
           };
 
