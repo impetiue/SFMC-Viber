@@ -35,19 +35,12 @@ timer = setTimeout(() => {
 
 // DropDown JavaScript
 
-function GetSelectedTextValue(ddlViewBy) {
-    var selectedText = ddlViewBy.options[ddlViewBy.selectedIndex].innerHTML;
-    var selectedValue = ddlViewBy.value;
-    alert("Selected Text: " + selectedText + " Value: " + selectedValue);
-
-}
-
 function ShowHideDiv() {
     var ddlViewBy = document.getElementById("ddlViewBy");
     var Msg = document.getElementById("Msg");
-    var url = document.getElementById("url");
+    
     Msg.style.display = ddlViewBy.value == "Text" ? "block" : "none";
-    url.style.display = ddlViewBy.value == "Image" ? "block" : "none";
+   
 
 }
 
