@@ -49,18 +49,25 @@ define([
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
+                if (key === 'accountSid') {
+                                $('#accountSID').val(val);
+                            }
 
-                if (key === 'ChannelId') {
-                    $('#ChannelId').val(val);
-                }
+                            if (key === 'messagingService') {
+                                $('#messagingService').val(val);
+                            }
 
-                if (key === 'authToken') {
-                    $('#authToken').val(val);
-                }
-                if (key === 'body') {
-                    $('#messageBody').val(val);
-                }                                                               
+                            if (key === 'ChannelId') {
+                                $('#ChannelId').val(val);
+                            }
 
+                            if (key === 'authToken') {
+                                $('#authToken').val(val);
+                            }
+                            if (key === 'body') {
+                                $('#messageBody').val(val);
+                                $('#UrlBody').val(val);
+                            }  
             })
         });
 
@@ -85,13 +92,16 @@ define([
 
     function save() {
 
-        var ChannelId = $('#ChannelId').val();
+         var accountSid = $('#UrlBody').val();
         var authToken = $('#authToken').val();
+        var messagingService = $('#ddlViewBy').val();
         var body = $('#messageBody').val();
 
         payload['arguments'].execute.inArguments = [{
+            "accountSid": accountSid,
             "ChannelId": ChannelId,
             "authToken": authToken,
+            "messagingService": messagingService,
             "body": body,
             "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}" //<----This should map to your data extension name and phone number column
         }];
