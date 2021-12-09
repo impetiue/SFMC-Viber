@@ -66,7 +66,6 @@ define([
                             }
                             if (key === 'body') {
                                 $('#messageBody').val(val);
-                                $('#UrlBody').val(val);
                             }  
             })
         });
@@ -92,13 +91,11 @@ define([
 
     function save() {
 
-         var accountSid = $('#UrlBody').val();
         var authToken = $('#authToken').val();
         var messagingService = $('#ddlViewBy').val();
         var body = $('#messageBody').val();
 
         payload['arguments'].execute.inArguments = [{
-            "accountSid": accountSid,
             "ChannelId": ChannelId,
             "authToken": authToken,
             "messagingService": messagingService,
