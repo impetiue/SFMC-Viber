@@ -19,6 +19,38 @@
 
             require(config, dependencies); 
         })();
+
+    let timer;
+
+document.addEventListener('input', e => {
+const el = e.target;
+
+if( el.matches('[data-color]') ) {
+clearTimeout(timer);
+timer = setTimeout(() => {
+    document.documentElement.style.setProperty(`--color-${el.dataset.color}`, el.value);
+}, 100)
+}
+})
+
+// DropDown JavaScript
+
+function GetSelectedTextValue(ddlViewBy) {
+    var selectedText = ddlViewBy.options[ddlViewBy.selectedIndex].innerHTML;
+    var selectedValue = ddlViewBy.value;
+    alert("Selected Text: " + selectedText + " Value: " + selectedValue);
+
+}
+
+function ShowHideDiv() {
+    var ddlViewBy = document.getElementById("ddlViewBy");
+    var Msg = document.getElementById("Msg");
+    var url = document.getElementById("url");
+    Msg.style.display = ddlViewBy.value == "Text" ? "block" : "none";
+    url.style.display = ddlViewBy.value == "Image" ? "block" : "none";
+
+}
+
     </script>
 
     <!--Styles-->
@@ -30,10 +62,130 @@
         #step1 {
             display: block;
         }
+        @import url("https://rsms.me/inter/inter.css");
+        :root {
+          --color-light: white;
+          --color-dark: #3f3f3f;
+          --color-signal: #320ae4;
+          --color-background: var(--color-light);
+          --color-text: var(--color-dark);
+          --color-accent: var(--color-signal);
+          --size-bezel: 0.5rem;
+          --size-radius: 4px;
+          line-height: 1.4;
+          font-family: "Inter", sans-serif;
+          font-size: calc(0.6rem + 0.4vw);
+          color: var(--color-text);
+          background: var(--color-background);
+          font-weight: 300;
+          padding: 0 calc(var(--size-bezel) * 3);
+        }
+        
+        h1,
+        h2,
+        h3 {
+          font-weight: 900;
+        }
+        
+        mark {
+          background: var(--color-accent);
+          color: var(--color-text);
+          font-weight: bold;
+          padding: 0 0.2em;
+        }
+        
+        .card {
+          background: var(--color-background);
+          padding: calc(4 * var(--size-bezel));
+          margin-top: calc(4 * var(--size-bezel));
+          border-radius: var(--size-radius);
+          border: 3px solid var(--color-shadow, currentColor);
+          box-shadow: 0.5rem 0.5rem 0 var(--color-shadow, currentColor);
+        }
+        .card--inverted {
+          --color-background: var(--color-dark);
+          color: var(--color-light);
+          --color-shadow: var(--color-accent);
+        }
+        .card--accent {
+          --color-background: var(--color-signal);
+          --color-accent: var(--color-light);
+          color: var(--color-dark);
+        }
+        .card *:first-child {
+          margin-top: 0;
+        }
+        
+        .l-design-widht {
+          max-width: 40rem;
+          padding: 1rem;
+        }
+        
+        .input {
+          position: relative;
+        }
+        .input__label {
+          position: absolute;
+          left: 0;
+          top: 0;
+          padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5);
+          margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5);
+          background: pink;
+          white-space: nowrap;
+          transform: translate(0, 0);
+          transform-origin: 0 0;
+          background: var(--color-background);
+          transition: transform 120ms ease-in;
+          font-weight: bold;
+          line-height: 1.2;
+        }
+        .input__field {
+          box-sizing: border-box;
+          display: block;
+          width: 100%;
+          border: 3px solid currentColor;
+          padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+          color: currentColor;
+          background: transparent;
+          border-radius: var(--size-radius);
+        }
+        .input__field:not(:-moz-placeholder-shown) + .input__label {
+          transform: translate(0.25rem, -65%) scale(0.8);
+          color: var(--color-accent);
+        }
+        .input__field:not(:-ms-input-placeholder) + .input__label {
+          transform: translate(0.25rem, -65%) scale(0.8);
+          color: var(--color-accent);
+        }
+        .input__field:focus + .input__label, .input__field:not(:placeholder-shown) + .input__label {
+          transform: translate(0.25rem, -65%) scale(0.8);
+          color: var(--color-accent);
+        }
+        
+        .icon {
+          display: inline-block;
+          width: 1em;
+          height: 1em;
+          margin-right: 0.5em;
+        }
+        
+        .hidden {
+          display: none;
+        }
+
+   <!--Drop Down Menu CSS-->
+
+
+   #hidden_div {
+    display: none;
+}
+        
     </style>
 
 </head>
 <body>
+
+    
 <div id="step1" class="step">
     <h2>Create a Viber SMS message:</h2>
     <hr>
@@ -41,16 +193,44 @@
                       
     <div class="form-group">
         <div class="form-group">
-            <div><label for="authToken">Auth Token:</label></div>
-            <input class="form-control" id="authToken" type="text" name="authToken" value="">
-        </div> 
-        <div><label for="ChannelId">Channel ID:</label></div>
-        <input class="form-control" id="ChannelId" type="text" name="ChannelId" value="">
-    </div>  
-    <div><label for="messageBody">Create message body:</label></div>
-        <input class="form-control" id="messageBody" type="text" name="messageBody" value="">        
-    </div> 
+            <label class="input" for="authToken">
+                <input class="input__field" id="authToken" type="text" name="authToken" size="75" placeholder=" " />
+                <span class="input__label">Auth Token:</span>
+              </label>
+        </div>
+        <div style="margin-top: 12px"> 
+        <label class="input" for="ChannelId">
+            <input style="width: 300 px" class="input__field" id="ChannelId" type="text" name="ChannelId" size="75" placeholder=" " />
+            <span class="input__label">Channel ID:</span>
+          </label>
+        </div>
+    </div>
+    
+    <div style="margin-top: 12px">
+        <select id="ddlViewBy" onchange="ShowHideDiv()">
+            <option value="None" selected="selected">--None--</option>
+            <option value="Text">Text</option>
+            <option value="Image">Image</option>
+          </select>
+        </div>
+
+    <div style="margin-top: 80px; display: none" id="Msg" display= "none"> 
+        <label class="input" for="messageBody">
+            <input class="input__field" id="messageBody" type="text" name="messageBody" size="75" placeholder=" " />
+            <span class="input__label">Create message body:</span>
+          </label>
+        </div>
+
+     <div style="margin-top: 80px; display: none" id="url">
+        <label class="input" for="UrlBody">
+            <input class="input__field" id="UrlBody" type="text" name="messageBody" size="75" placeholder=" " />
+            <span class="input__label">Enter Image URL:</span>
+          </label>
+        </div>
+     </div>   
 
 </div>
+
+
 </body>
 </html>
