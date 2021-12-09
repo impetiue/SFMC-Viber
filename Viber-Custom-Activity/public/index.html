@@ -39,7 +39,13 @@ function ShowHideDiv() {
     var ddlViewBy = document.getElementById("ddlViewBy");
     var Msg = document.getElementById("Msg");
     
-    Msg.style.display = ddlViewBy.value == "Text" ? "block" : "none";
+    if (ddlViewBy.value == "Text" || ddlViewBy.value == "Image") {
+        Msg.style.display = "none";
+    } else {
+      Msg.style.display = "block";
+    }
+    
+   // Msg.style.display = ddlViewBy.value == "Text" ? "block" : "none";
     
    
 
@@ -208,7 +214,7 @@ function ShowHideDiv() {
           </select>
         </div>
 
-    <div style="margin-top: 80px" id="Msg" display= "none"> 
+    <div style="margin-top: 80px; display: none" id="Msg" display= "none"> 
         <label class="input" for="messageBody">
             <input class="input__field" id="messageBody" type="text" name="messageBody" size="75" placeholder=" " />
             <span class="input__label">Create message body:</span>
