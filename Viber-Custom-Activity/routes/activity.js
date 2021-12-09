@@ -146,7 +146,7 @@ exports.execute = function (req, res) {
 
 
 
-        }else{
+        }else if(run === 'Image'){
           
           var options = {
             'method': 'POST',
