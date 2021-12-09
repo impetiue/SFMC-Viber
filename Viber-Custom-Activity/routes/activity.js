@@ -107,7 +107,8 @@ exports.execute = function (req, res) {
      console.log("from=>>>>>>>>>>> " + from);*/
     const body = requestBody.body;
      console.log("body=>>>>>>>>>>>>>> " + body);
-
+      
+       var run = "Image";
    /* const client = require('twilio')(accountSid, authToken); 
      console.log("client=>>>>>>>>>>>>>> " + client);
     client.messages 
@@ -119,15 +120,15 @@ exports.execute = function (req, res) {
           .then(message => console.log(message.sid)) 
           .done();*/
 
-          var request = require('request');
+         if(run == "Text"){ var request = require('request');
           var options = {
             'method': 'POST',
             'url': 'https://api.amio.io/v1/messages',
             'headers': {
               'Content-Type': 'application/json',
-              'Authorization': 'Bearer ' + authToken
+              'Authorization': 'Bearer '+ authToken
             },
-           body: JSON.stringify({
+            body: JSON.stringify({
               "channel": {
                 "id": ChannelId
               },
@@ -136,11 +137,36 @@ exports.execute = function (req, res) {
               },
               "content": {
                 "type": "text",
-                "payload": body
+                "payload": "Message From SFMC!"
               }
             })
-          
           };
+        }else if(run == "Image"){
+          
+          var options = {
+            'method': 'POST',
+            'url': 'https://api.amio.io/v1/messages',
+            'headers': {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer '+ authToken
+            },
+            body: JSON.stringify({
+              "channel": {
+                "id": ChannelId
+              },
+              "contact": {
+                "id": "6873520748825954928"
+              },
+              "content": {
+                "type": "image",
+                "payload": {
+                  "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/V%C3%A1clav_Havel_cut_out.jpg"
+                }
+              }
+            })
+          };
+
+        }
 
           request(options, function (error, response) {
             if (error) throw new Error(error);
