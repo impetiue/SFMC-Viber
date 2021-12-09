@@ -103,14 +103,21 @@ exports.execute = function (req, res) {
      console.log("ChannelId=>>>>>>>> " + ChannelId);
     const authToken = requestBody.authToken;
      console.log("authToken=>>>>>>>>> " + authToken);
+
+     const type = requestBody.messagingService;
+     console.log("from=>>>>>>>>>>> " + from);
+
     const to = requestBody.to;
      console.log("to=>>>>>>>>> " + to);
     /*const from = requestBody.messagingService;
      console.log("from=>>>>>>>>>>> " + from);*/
     const body = requestBody.body;
      console.log("body=>>>>>>>>>>>>>> " + body);
-      
-       var run = 'Image';
+
+     const url = requestBody.accountSid;
+     console.log("accountSid=>>>>>>>> " + accountSid);
+
+     var run = type;
    /* const client = require('twilio')(accountSid, authToken); 
      console.log("client=>>>>>>>>>>>>>> " + client);
     client.messages 
@@ -139,7 +146,7 @@ exports.execute = function (req, res) {
               },
               "content": {
                 "type": "text",
-                "payload": "Message From SFMC!"
+                "payload": body
               }
             })
           };
@@ -165,7 +172,7 @@ exports.execute = function (req, res) {
               "content": {
                 "type": "image",
                 "payload": {
-                  "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/V%C3%A1clav_Havel_cut_out.jpg"
+                  "url": url
                 }
               }
             })
