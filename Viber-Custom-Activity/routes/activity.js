@@ -141,6 +141,12 @@ exports.execute = function (req, res) {
               }
             })
           };
+         
+          request(options, function (error, response) {
+            if (error) throw new Error(error);
+            console.log(response.body);
+          });                 
+                           
         }else if(run == "Image"){
           
           var options = {
@@ -165,13 +171,15 @@ exports.execute = function (req, res) {
               }
             })
           };
-
-        }
-
+            
+            
           request(options, function (error, response) {
             if (error) throw new Error(error);
             console.log(response.body);
           });
+
+
+        }
 
 
 
