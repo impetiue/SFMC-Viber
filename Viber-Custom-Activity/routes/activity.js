@@ -172,7 +172,7 @@ exports.execute = function (req, res) {
         }
 
          
-          request(options, function (error, response) {
+          request(options, function (error, response,body) {
             if (error) throw new Error(error);
             console.log(response.body);
           });
