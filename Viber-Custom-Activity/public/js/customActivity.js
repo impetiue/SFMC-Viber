@@ -90,7 +90,7 @@ define([
     }
 
     function save() {
-
+        var ChannelId = $('#ChannelId').val();
         var authToken = $('#authToken').val();
         var messagingService = $('#ddlViewBy').val();
         var body = $('#messageBody').val();
