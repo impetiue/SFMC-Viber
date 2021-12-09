@@ -120,15 +120,15 @@ exports.execute = function (req, res) {
           .then(message => console.log(message.sid)) 
           .done();*/
 
-         if(run == "Text"){ var request = require('request');
+         var request = require('request');
           var options = {
             'method': 'POST',
             'url': 'https://api.amio.io/v1/messages',
             'headers': {
               'Content-Type': 'application/json',
-              'Authorization': 'Bearer '+ authToken
+              'Authorization': 'Bearer ' + authToken
             },
-            body: JSON.stringify({
+           body: JSON.stringify({
               "channel": {
                 "id": ChannelId
               },
@@ -137,49 +137,17 @@ exports.execute = function (req, res) {
               },
               "content": {
                 "type": "text",
-                "payload": "Message From SFMC!"
+                "payload": body
               }
             })
-          };
-         
-          request(options, function (error, response) {
-            if (error) throw new Error(error);
-            console.log(response.body);
-          });                 
-                           
-        }else if(run == "Image"){
           
-          var options = {
-            'method': 'POST',
-            'url': 'https://api.amio.io/v1/messages',
-            'headers': {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer '+ authToken
-            },
-            body: JSON.stringify({
-              "channel": {
-                "id": ChannelId
-              },
-              "contact": {
-                "id": "6873520748825954928"
-              },
-              "content": {
-                "type": "image",
-                "payload": {
-                  "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/V%C3%A1clav_Havel_cut_out.jpg"
-                }
-              }
-            })
           };
-            
-            
+
           request(options, function (error, response) {
             if (error) throw new Error(error);
             console.log(response.body);
           });
 
-
-        }
 
 
 
