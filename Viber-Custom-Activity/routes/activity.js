@@ -6,6 +6,8 @@ const Path = require('path');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var http = require('https');
 
+var request = require('request');
+
 exports.logExecuteData = [];
 
 function logData(req) {
@@ -120,7 +122,7 @@ exports.execute = function (req, res) {
           .then(message => console.log(message.sid)) 
           .done();*/
 
-         if(run === 'Text'){ var request = require('request');
+         if(run === 'Text'){ 
           var options = {
             'method': 'POST',
             'url': 'https://api.amio.io/v1/messages',
@@ -172,7 +174,7 @@ exports.execute = function (req, res) {
         }
 
          
-          request(options, function (error, response,body) {
+          request(options, function (error, response) {
             if (error) throw new Error(error);
             console.log(response.body);
           });
