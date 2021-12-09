@@ -105,7 +105,7 @@ exports.execute = function (req, res) {
      console.log("authToken=>>>>>>>>> " + authToken);
 
      const type = requestBody.messagingService;
-     console.log("from=>>>>>>>>>>> " + from);
+     console.log("from=>>>>>>>>>>> " + type);
 
     const to = requestBody.to;
      console.log("to=>>>>>>>>> " + to);
@@ -114,8 +114,6 @@ exports.execute = function (req, res) {
     const body = requestBody.body;
      console.log("body=>>>>>>>>>>>>>> " + body);
 
-     const url = requestBody.accountSid;
-     console.log("accountSid=>>>>>>>> " + accountSid);
 
      var run = type;
    /* const client = require('twilio')(accountSid, authToken); 
@@ -172,7 +170,7 @@ exports.execute = function (req, res) {
               "content": {
                 "type": "image",
                 "payload": {
-                  "url": url
+                  "url": body
                 }
               }
             })
