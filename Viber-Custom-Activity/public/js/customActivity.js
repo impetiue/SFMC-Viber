@@ -168,7 +168,7 @@ define([
                 $('#step2').show();
                 console.log("---------------------------------------------------------------------------------------------------------------->This is step 2");
                 
-                 document.getElementById('ddlViewBy').style.display = "none";
+                 document.getElementById('ddlViewBy').style.display = "inline";
                 
                 connection.trigger('updateButton', {
                     button: 'back',
