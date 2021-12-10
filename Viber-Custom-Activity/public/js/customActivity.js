@@ -102,7 +102,6 @@ define([
               }
               else
               {
-                document.getElementById("error").innerHTML= "";
                 connection.trigger('nextStep');
               }
 
