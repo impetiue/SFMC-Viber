@@ -154,6 +154,49 @@ define([
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
+    
+    function showStep(step, stepIndex) {
+        if (stepIndex && !step) {
+            step = steps[stepIndex-1];
+        }
+
+        currentStep = step;
+
+        $('.step').hide();
+
+        switch(currentStep.key) {
+            case 'step1':
+                $('#step1').show();
+                console.log("---------------------------------------------------------------------------------------------------------------->This is step 1");
+                 connection.trigger('updateButton', {
+                  button: 'next',
+                     text: 'next',
+                  visible: true  });
+                break;
+
+            case 'step2':
+                $('#step2').show();
+                console.log("---------------------------------------------------------------------------------------------------------------->This is step 2");
+              /*  connection.trigger('updateButton', {
+                    button: 'back',
+                    visible: true
+                });*/
+               connection.trigger('updateButton', {
+                    button: 'next',
+                    text: 'next',
+                    visible: true
+                });
+                break;
+            case 'step3':
+                $('#step3').show();
+                console.log("------------------------------------------------------------->This is step 3");
+
+
+                
+                
+                break;
+        }
+    }
 
     function save() {
         var ChannelId = $('#ChannelId').val();
