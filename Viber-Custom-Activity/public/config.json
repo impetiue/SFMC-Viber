@@ -84,42 +84,42 @@
                        "accountSid": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "in"   
                         }
                     },                    
                     {
                         "authToken": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "in"   
                         }
                     },                    
                     {
                         "from": {
                             "dataType": "Phone",
                             "isNullable": true,
-                            "direction": "out"   
+                            "direction": "in"   
                         }
                     },                    
                     {
                         "to": {
                             "dataType": "Phone",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "in"   
                         }
                     },
                     {
                         "body": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "in"   
                         }
                     },                    
                     {
                         "email": {
                             "dataType": "Email",
                             "isNullable": true,
-                            "direction": "out"
+                            "direction": "in"
                         }
                     }
                 ],
