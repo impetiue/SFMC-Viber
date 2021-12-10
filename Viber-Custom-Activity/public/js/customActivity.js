@@ -22,7 +22,7 @@ define([
     connection.on('requestedEndpoints', onGetEndpoints);
     
     connection.on('clickedNext', onClickedNext);
-    //connection.on('clickedBack', onClickedBack);
+    connection.on('clickedBack', onClickedBack);
     //connection.on('gotoStep', onGotoStep);
     //connection.on('clickedNext', save);
     //connection.on('clickedBack', onClickedBack);
@@ -133,6 +133,15 @@ define([
             connection.trigger('nextStep');
         }
 
+    }
+    
+     function onClickedBack () {
+        connection.trigger('prevStep');
+    }
+
+    function onGotoStep (step) {
+        showStep(step);
+        connection.trigger('ready');
     }
 
     function onGetTokens (tokens) {
