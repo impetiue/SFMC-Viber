@@ -66,7 +66,8 @@
     },
     "wizardSteps": [
       { "label": "Set-up Auth Key", "key": "step1" },
-      { "label": "Create SMS Message", "key": "step2" }
+      { "label": "Create SMS Message", "key": "step2" },
+      { "label": "Preview", "key": "step3" }
     ],
     "userInterfaces": {
        "configModal": {
