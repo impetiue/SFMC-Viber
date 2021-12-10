@@ -18,8 +18,11 @@ define([
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
-
-    connection.on('clickedNext', save);
+    
+    connection.on('clickedNext', onClickedNext);
+    connection.on('clickedBack', onClickedBack);
+    connection.on('gotoStep', onGotoStep);
+   // connection.on('clickedNext', save);
     //connection.on('clickedBack', onClickedBack);
     //connection.on('gotoStep', onGotoStep);
 
@@ -72,9 +75,36 @@ define([
 
         connection.trigger('updateButton', {
             button: 'next',
-            text: 'done',
+            text: 'Next',
             visible: true
         });
+
+    }
+    
+    function onClickedNext () {
+        var errorSlds = '<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert"><span class="slds-assistive-text">error</span><span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed"><svg class="slds-icon slds-icon_x-small" aria-hidden="true"><use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use></svg></span><h2>Please fill Account SID and Auth Token </h2> </div>';
+        var checkboxerrorSlds = '<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert"><span class="slds-assistive-text">error</span><span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed"><svg class="slds-icon slds-icon_x-small" aria-hidden="true"><use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use></svg></span><h2>Please select atleast one checkbox</h2> </div>';
+        var recipienterrorSlds = '<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert"><span class="slds-assistive-text">error</span><span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed"><svg class="slds-icon slds-icon_x-small" aria-hidden="true"><use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use></svg></span><h2>Please select a recipient.</h2> </div>';
+        var messageBodyerrorSlds = '<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert"><span class="slds-assistive-text">error</span><span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed"><svg class="slds-icon slds-icon_x-small" aria-hidden="true"><use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use></svg></span><h2>Message body is empty.</h2></div>';
+
+        if((currentStep.key) === 'step1')
+        {
+            
+          var ChannelId = $('#ChannelId').val();
+          var authToken = $('#authToken').val();
+              
+              if(!ChannelId || !authToken )
+              { 
+                document.getElementById("error").innerHTML= errorSlds;
+                connection.trigger('prevStep');
+              }
+              else
+              {
+                document.getElementById("error").innerHTML= "";
+                connection.trigger('nextStep');
+              }
+
+        }
 
     }
 
