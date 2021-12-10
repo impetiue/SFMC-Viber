@@ -109,6 +109,9 @@ define([
         {
             //var messagebody1 = document.getElementById('messageBody').innerHTML;
                //console.log("Checking if message body is null or not"+ messagebody1);
+              
+            document.getElementById('ddlViewBy').style.display = "none";
+            
                 connection.trigger('nextStep');
             
         }else if (currentStep.key === 'step3') 
