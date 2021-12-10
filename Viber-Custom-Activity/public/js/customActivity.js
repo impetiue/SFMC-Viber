@@ -108,21 +108,9 @@ define([
 
         }else if ( currentStep.key === 'step2')
         {
-            var messagebody1 = document.getElementById('messageBody').innerHTML;
-            console.log("Checking if message body is null or not"+ messagebody1);
-            if(messagebody1 == "")
-            { 
-                console.log("Null");
-            document.getElementById("messageBodyNull").innerHTML = messageBodyerrorSlds;
-            connection.trigger('ready');
-            }else
-            {
-                //document.getElementById("messageBodyNull").innerHTML= "";
-                console.log("Not null");
-                
+            //var messagebody1 = document.getElementById('messageBody').innerHTML;
+               //console.log("Checking if message body is null or not"+ messagebody1);
                 connection.trigger('nextStep');
-            }
-
             
         }else if (currentStep.key === 'step3') 
         {
