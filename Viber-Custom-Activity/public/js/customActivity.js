@@ -190,11 +190,6 @@ define([
             case 'step3':
                 $('#step3').show();
                 console.log("------------------------------------------------------------->This is step 3");
-
-               connection.trigger('updateButton', {
-                     button: 'back',
-                     visible: true
-                });
                 
                    connection.trigger('updateButton', {
                         button: 'next',
