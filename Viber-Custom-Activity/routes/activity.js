@@ -151,7 +151,7 @@ exports.execute = function (req, res) {
 
 
 
-        }else if(run === 'Image'){
+        }else if(run === 'Structure'){
           
           var options = {
             'method': 'POST',
@@ -168,11 +168,21 @@ exports.execute = function (req, res) {
                 "id": "6873520748825954928"
               },
               "content": {
-                "type": "image",
+                "type": "structure",
                 "payload": {
-                  "url": body
+                  "title": "Leaf salad",
+                  "text": "9.5 €",
+                  "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Fish_-lunch.jpg",
+                  "item_url": "https://example.com/daily-menu",
+                  "buttons": [
+                    {
+                      "type": "url",
+                      "title": "Show Details",
+                      "payload": "https://example.com/daily-menu/food-1"
+                    }
+                  ]
                 }
-              }
+                }
             })
           };
 
