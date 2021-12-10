@@ -110,7 +110,7 @@ define([
             //var messagebody1 = document.getElementById('messageBody').innerHTML;
                //console.log("Checking if message body is null or not"+ messagebody1);
               
-            document.getElementById('ddlViewBy').style.display = "none";
+           
             
                 connection.trigger('nextStep');
             
@@ -167,6 +167,9 @@ define([
             case 'step2':
                 $('#step2').show();
                 console.log("---------------------------------------------------------------------------------------------------------------->This is step 2");
+                
+                 document.getElementById('ddlViewBy').style.display = "none";
+                
                 connection.trigger('updateButton', {
                     button: 'back',
                     visible: true
