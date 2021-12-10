@@ -23,7 +23,7 @@ define([
     
     connection.on('clickedNext', onClickedNext);
     connection.on('clickedBack', onClickedBack);
-    connection.on('gotoStep', onGotoStep);
+    //connection.on('gotoStep', onGotoStep);
     //connection.on('clickedNext', save);
     //connection.on('clickedBack', onClickedBack);
     //connection.on('gotoStep', onGotoStep);
@@ -155,7 +155,7 @@ define([
         console.log("Get End Points function: "+JSON.stringify(endpoints));
     }
     
-    function showStep(step, stepIndex) {
+   /* function showStep(step, stepIndex) {
         if (stepIndex && !step) {
             step = steps[stepIndex-1];
         }
@@ -177,10 +177,10 @@ define([
             case 'step2':
                 $('#step2').show();
                 console.log("---------------------------------------------------------------------------------------------------------------->This is step 2");
-              /*  connection.trigger('updateButton', {
+                connection.trigger('updateButton', {
                     button: 'back',
                     visible: true
-                });*/
+                });
                connection.trigger('updateButton', {
                     button: 'next',
                     text: 'next',
@@ -200,7 +200,7 @@ define([
                 
                 break;
         }
-    }
+    } */
 
     function save() {
         var ChannelId = $('#ChannelId').val();
