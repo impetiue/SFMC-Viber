@@ -23,7 +23,7 @@ define([
     
     connection.on('clickedNext', onClickedNext);
     connection.on('clickedBack', onClickedBack);
-    //connection.on('gotoStep', onGotoStep);
+    connection.on('gotoStep', onGotoStep);
     //connection.on('clickedNext', save);
     //connection.on('clickedBack', onClickedBack);
     //connection.on('gotoStep', onGotoStep);
