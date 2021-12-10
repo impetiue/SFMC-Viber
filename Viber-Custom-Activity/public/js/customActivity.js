@@ -77,7 +77,7 @@ define([
 
         connection.trigger('updateButton', {
             button: 'next',
-            text: 'Done',
+            text: 'next',
             visible: true
         });
 
@@ -191,7 +191,16 @@ define([
                 $('#step3').show();
                 console.log("------------------------------------------------------------->This is step 3");
 
-
+               connection.trigger('updateButton', {
+                     button: 'back',
+                     visible: true
+                });
+                
+                   connection.trigger('updateButton', {
+                        button: 'next',
+                        text: 'Done',
+                        visible: true
+                    });
                 
                 
                 break;
