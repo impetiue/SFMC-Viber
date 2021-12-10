@@ -22,7 +22,7 @@ define([
     connection.on('clickedNext', onClickedNext);
     //connection.on('clickedBack', onClickedBack);
     //connection.on('gotoStep', onGotoStep);
-   // connection.on('clickedNext', save);
+    connection.on('clickedNext', save);
     //connection.on('clickedBack', onClickedBack);
     //connection.on('gotoStep', onGotoStep);
 
@@ -122,6 +122,13 @@ define([
             }
 
             
+        }else if (currentStep.key === 'step3') 
+        {
+            save();
+        }
+        else {
+            
+            connection.trigger('nextStep');
         }
 
     }
