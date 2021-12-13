@@ -109,7 +109,7 @@ define([
         {
             //var messagebody1 = document.getElementById('messageBody').innerHTML;
                //console.log("Checking if message body is null or not"+ messagebody1);
-              
+              document.getElementById('myBtn').style.display = "inline";
            
             
                 connection.trigger('nextStep');
