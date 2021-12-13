@@ -167,7 +167,7 @@ define([
                 $('#step2').show();
                 console.log("---------------------------------------------------------------------------------------------------------------->This is step 2");
                 
-                 document.getElementById('showstep2').style.display = "inline-block";
+                
                 
                 connection.trigger('updateButton', {
                     button: 'back',
