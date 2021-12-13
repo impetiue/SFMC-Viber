@@ -109,8 +109,7 @@ define([
         {
             //var messagebody1 = document.getElementById('messageBody').innerHTML;
                //console.log("Checking if message body is null or not"+ messagebody1);
-              document.getElementById('myBtn').style.display = "inline";
-           
+                        
             
                 connection.trigger('nextStep');
             
@@ -168,7 +167,7 @@ define([
                 $('#step2').show();
                 console.log("---------------------------------------------------------------------------------------------------------------->This is step 2");
                 
-                 document.getElementById('ddlViewBy').style.display = "block";
+                 document.getElementById('showstep2').style.display = "inline-block";
                 
                 connection.trigger('updateButton', {
                     button: 'back',
