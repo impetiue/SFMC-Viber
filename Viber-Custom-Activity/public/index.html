@@ -181,48 +181,51 @@ function ShowHideDiv() {
 
     
 <div id="step1" class="step">
-    <h2>Create a Viber SMS message:</h2>
-    <hr>
-    <div class="form-group">
-                      
-    <div class="form-group">
-        <div class="form-group">
-            <label class="input" for="authToken">
-                <input class="input__field" id="authToken" type="text" name="authToken" size="75" placeholder=" " />
-                <span class="input__label">Auth Token:</span>
-              </label>
-        </div>
-        <div style="margin-top: 12px"> 
-        <label class="input" for="ChannelId">
-            <input style="width: 300 px" class="input__field" id="ChannelId" type="text" name="ChannelId" size="75" placeholder=" " />
-            <span class="input__label">Channel ID:</span>
-          </label>
-        </div>
-    </div>
-    
-     </div>   
+<h2>Enter AuthToken and ChannelId:</h2>
+<hr>
+<div class="form-group">
+                
+<div class="form-group">
+<div class="form-group">
+    <label class="input" for="authToken">
+        <input class="input__field" id="authToken" type="text" name="authToken" size="75" placeholder=" " />
+        <span class="input__label">Auth Token:</span>
+        </label>
+</div>
+<div style="margin-top: 12px"> 
+<label class="input" for="ChannelId">
+    <input style="width: 300 px" class="input__field" id="ChannelId" type="text" name="ChannelId" size="75" placeholder=" " />
+    <span class="input__label">Channel ID:</span>
+    </label>
+</div>
+</div>
+</div>   
 
 </div>
     
-    <div id="step2">
-   
-         <div style="margin-top: 12px" >
-        <select id="ddlViewBy" onchange="ShowHideDiv()">
-            <option value="None" selected="selected">--None--</option>
-            <option value="Text">Text</option>
-            <option value="Structure">Structure</option>
-          </select>
-        </div>
+<div id="step2" class="step">
+<h2>Create a Viber SMS message:</h2>
+<hr>
+<div class="form-group">
 
-    <div style="margin-top: 80px; display: none" id="Msg" display= "none"> 
-        <label class="input" for="messageBody">
-            <input class="input__field" id="messageBody" type="text" name="messageBody" size="75" placeholder=" " />
-            <span class="input__label">Create message body:</span>
-          </label>
-        </div>
-        
-    </div>
+<div style="margin-top: 12px" id="showstep2">
+<select id="ddlViewBy" onchange="ShowHideDiv()">
+<option value="None" selected="selected">--None--</option>
+<option value="Text">Text</option>
+<option value="Structure">Structure</option>
+</select>
+</div>
 
+<div style="margin-top: 80px; display: none" id="Msg" display= "none"> 
+<label class="input" for="messageBody">
+<input class="input__field" id="messageBody" type="text" name="messageBody" size="75" placeholder=" " />
+<span class="input__label">Create message body:</span>
+</label>
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
