@@ -308,6 +308,105 @@ body{
 }
         
         
+        /* ************Chat Bubble CSS************* */
+
+.quote {
+      display: inline-block;
+      margin: 2ex 1em;
+    }
+    
+    .quote blockquote {
+      color: tint(#2D4154, 20%);
+      margin: 0;
+    }
+    .quote .round-avatar {
+      border-radius: 50%;
+      border: 1px solid #E0E8ED;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      float: left;
+      margin-right: 0.5em;
+    }
+    .quote .speech-bubble {
+      float: left;
+    }
+    .quote .speech-bubble.left {
+      border: 1px solid #E0E8ED;
+      border-radius: 6px;
+      position: relative;
+      margin-left: 9px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      margin-right: 4px;
+      margin-bottom: 4px;
+      padding: 1ex 1em;
+      background: #FDFDFE;
+    }
+    .quote .speech-bubble.left:after, .quote .speech-bubble.left:before {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+    .quote .speech-bubble.left:after {
+      top: 10px;
+    }
+    .quote .speech-bubble.left:before {
+      top: 10px;
+    }
+    .quote .speech-bubble.left:after {
+      border: 8px solid transparent;
+      border-right: 8px solid #FDFDFE;
+      left: -8px;
+      border-left: none;
+    }
+    .quote .speech-bubble.left:before {
+      border: 10px solid transparent;
+      border-right: 10px solid #E0E8ED;
+      left: -10px;
+      border-left: none;
+    }
+    .quote .speech-bubble.top {
+      border: 1px solid #E0E8ED;
+      border-radius: 6px;
+      position: relative;
+      margin-top: 9px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      margin-bottom: 4px;
+      margin-bottom: 4px;
+      padding: 1ex 1em;
+      background: #FDFDFE;
+      clear: both;
+      margin-left: 0;
+      margin-top: 1ex;
+    }
+    .quote .speech-bubble.top:after, .quote .speech-bubble.top:before {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+    .quote .speech-bubble.top:after {
+      left: 8px;
+    }
+    .quote .speech-bubble.top:before {
+      left: 8px;
+    }
+    .quote .speech-bubble.top:after {
+      border: 8px solid transparent;
+      border-bottom: 8px solid #FDFDFE;
+      top: -8px;
+      border-top: none;
+    }
+    .quote .speech-bubble.top:before {
+      border: 10px solid transparent;
+      border-bottom: 10px solid #E0E8ED;
+      top: -10px;
+      border-top: none;
+    }
+    .quote .speech-bubble p {
+      line-height: 1.3em;
+      margin: 0;
+    }
+
+        
+        
     </style>
 
 </head>
