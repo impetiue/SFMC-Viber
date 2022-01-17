@@ -428,29 +428,7 @@ body{
     }
 
         /* ************Rich Text Editor CSS************* */
-        
-            div,iframe {
-              width: 300px !important;
-              margin: auto;
-              display: block;
-              border: 1px solid #ccc;
-            }
-            iframe{
-              height:150px !important;
-            background-color: white;
-            }
-            div {
-              border: none;
-              margin-bottom: 10px;
-            }
-            button,input,select {
-              margin:5px;
-            }
-            button {
-            color: white;
-            background-color: #FF4447;
-            }
-        
+       
         
         
     </style>
@@ -562,9 +540,9 @@ body{
         <option value="7">7</option>
       </select>Font Color<input type="color" onchange="execVal('foreColor',this.value)" /> Highlight<input type="color" onchange="execVal('hiliteColor',this.value)" />
   </div>
-  <textarea name="richTextField" style="width:80%;height: 80%;margin:auto;display: block;">
+  <iframe name="richTextField" style="width:300px;height: 150px;margin:auto;display: block;">
       
-    </textarea>
+    </iframe>
 
 <!--End-->
         
