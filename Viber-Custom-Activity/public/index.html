@@ -56,13 +56,13 @@ function ShowHideDiv() {
       // Rich Text Editor JS
         
             function enableEditMode() {
-              richTextField.document.designMode = "on";
+              w3review.document.designMode = "on";
             }
             function Edit(command) {
-              richTextField.document.execCommand(command, false, null);
+              w3review.document.execCommand(command, false, null);
             }
             function execVal(command, value) {
-              richTextField.document.execCommand(command, false, value);
+              w3review.document.execCommand(command, false, value);
             }
 
    </script>
@@ -488,7 +488,11 @@ body{
   <div id="step3" class="step">
 
       <!--Text Area-->
-
+<div>
+   
+    <button onclick="Edit('bold')" title="bold"><i class="fa fa-bold"></i></button>
+    
+</div>
 <textarea style="width: 300px; height: 150px; margin-top: 10%;" id="text" name="w3review" rows="4" cols="50" onkeyup="myFunction()">
   </textarea>
       
