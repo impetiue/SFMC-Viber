@@ -53,6 +53,16 @@ function ShowHideDiv() {
         document.getElementById("sp").innerHTML = x;
     }
         
+     //  Change Stuff Function
+        const myIframe = document.getElementById("text").value;
+        function changeStuff (){
+            const iframeWindow = myIframe.contentWindow;
+            const iframeDocument = myIframe.contentDocument;
+            const iframeText = iframeDocument.querySelector("blockquote");
+            
+            iframeText.textContent =  myIframe;
+        }
+        
       // Rich Text Editor JS
         
             function enableEditMode() {
@@ -497,8 +507,8 @@ body{
     <button onclick="Edit('insertOrderedList')" title="ordered list"><img src="images/orderList.png" alt="" width="13" height="12"></button>
     
 </div>
-<textarea style="width: 300px; height: 150px; margin-top: 1%; display: block;" id="text" name="richTextField" rows="4" cols="50" onkeyup="myFunction()">
-  </textarea>
+<iframe style="width: 300px; height: 150px; margin-top: 1%; display: block;" id="text" name="richTextField" rows="4" cols="50" onkeyup="changeStuff()">
+  </iframe>
       
     
 <!--End-->
